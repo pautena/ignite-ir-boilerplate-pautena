@@ -157,3 +157,15 @@ If you would like to have the `ignite generate` command include the generation o
 ## Premium Support
 
 [Ignite CLI](https://infinite.red/ignite) and [Ignite IR Boilerplate](https://github.com/infinitered/ignite-ir-boilerplate-andross), as open source projects, are free to use and always will be. [Infinite Red](https://infinite.red/) offers premium Ignite CLI support and general mobile app design/development services. Email us at [hello@infinite.red](mailto:hello@infinite.red) to get in touch with us for more details.
+
+
+## Fixes
+
+### React Native and Xcode 10 issues
+
+Run this commands after initialize a project:
+
+$ cd node_modules/react-native/scripts && ./ios-install-third-party.sh && cd ../../../
+$ cd node_modules/react-native/third-party/glog-0.3.5/ && ../../scripts/ios-configure-glog.sh && cd ../../../..
+
+[Link to solution](https://github.com/facebook/react-native/issues/21168)

@@ -2,6 +2,8 @@ const options = require('./options')
 const { merge, pipe, assoc, omit, __ } = require('ramda')
 const { getReactNativeVersion } = require('./lib/react-native-version')
 
+
+
 /**
  * Is Android installed?
  *
@@ -41,7 +43,7 @@ async function install (context) {
 
   const name = parameters.third
   const spinner = print
-    .spin(`using the ${red('Infinite Red')} boilerplate v2 (code name 'Andross')`)
+    .spin(`using the ${blue('Pau Tena')} boilerplate (based on ${red('Infinite Red')} boilerplate v2 [code name 'Andross'])`)
     .succeed()
 
   // attempt to install React Native or die trying
@@ -186,10 +188,6 @@ async function install (context) {
       })
     }
 
-    if (answers['i18n'] === 'react-native-i18n') {
-      await system.spawn(`ignite add i18n@"~>1.1.1" ${debugFlag}`, { stdio: 'inherit' })
-    }
-
     if (answers['animatable'] === 'react-native-animatable') {
       await system.spawn(`ignite add animatable@"~>1.0.0" ${debugFlag}`, {
         stdio: 'inherit'
@@ -225,16 +223,6 @@ async function install (context) {
     spinner.succeed(`configured git`)
   }
 
-  //Fix xcode 10 problems
-  await system.spawn(`cd node_modules/react-native/scripts && ./ios-install-third-party.sh && cd ../../../`, {
-    stdio: 'inherit'
-  });
-
-  await system.spawn(`cd node_modules/react-native/third-party/glog-0.3.5/ && ../../scripts/ios-configure-glog.sh && cd ../../../../`, {
-    stdio: 'inherit'
-  });
-
-  //End
 
   const perfDuration = parseInt(((new Date()).getTime() - perfStart) / 10) / 100
   spinner.succeed(`ignited ${yellow(name)} in ${perfDuration}s`)
@@ -251,10 +239,6 @@ async function install (context) {
       react-native run-ios
       react-native run-android${androidInfo}
       ignite --help
-
-    ${gray('Read the walkthrough at https://github.com/infinitered/ignite-ir-boilerplate-andross/blob/master/readme.md#boilerplate-walkthrough')}
-
-    ${blue('Need additional help? Join our Slack community at http://community.infinite.red.')}
 
     ${bold('Now get cooking! 🍽')}
   `
