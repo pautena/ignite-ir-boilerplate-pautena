@@ -187,7 +187,7 @@ async function install (context) {
     }
 
     if (answers['i18n'] === 'react-native-i18n') {
-      await system.spawn(`ignite add i18n@"~>1.0.0" ${debugFlag}`, { stdio: 'inherit' })
+      await system.spawn(`ignite add i18n@"~>1.1.1" ${debugFlag}`, { stdio: 'inherit' })
     }
 
     if (answers['animatable'] === 'react-native-animatable') {
@@ -224,6 +224,17 @@ async function install (context) {
 
     spinner.succeed(`configured git`)
   }
+
+  //Fix xcode 10 problems
+  await system.spawn(`cd node_modules/react-native/scripts && ./ios-install-third-party.sh && cd ../../../`, {
+    stdio: 'inherit'
+  });
+
+  await system.spawn(`cd node_modules/react-native/third-party/glog-0.3.5/ && ../../scripts/ios-configure-glog.sh && cd ../../../../`, {
+    stdio: 'inherit'
+  });
+
+  //End
 
   const perfDuration = parseInt(((new Date()).getTime() - perfStart) / 10) / 100
   spinner.succeed(`ignited ${yellow(name)} in ${perfDuration}s`)
