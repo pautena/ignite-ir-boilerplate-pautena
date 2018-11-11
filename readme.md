@@ -1,18 +1,17 @@
 <p align="center"><img src="http://ir_public.s3.amazonaws.com/projects/ignite/ignite-andross-launch-screen.png" alt="logo" width="414px"></p>
 
-# Ignite IR Boilerplate ("Andross")
-
-[![Build Status](https://semaphoreci.com/api/v1/ir/ignite-ir-boilerplate-andross/branches/master/badge.svg)](https://semaphoreci.com/ir/ignite-ir-boilerplate-andross)
+# Ignite IR Boilerplate ("Pau Tena Vidal")
+##### Based on Ignite IR Boilerplate ["Andross"](https://github.com/infinitered/ignite-ir-boilerplate-andross)
 
 
 ## The tried and true boilerplate for [Infinite Red](https://infinite.red) opinions
 
 Currently includes:
 
-* React Native 0.55.1 (but you can change this if you want to experiment)
-* React Navigation
-* Redux
-* Redux Sagas
+* React Native 0.57.0
+* React Navigation 1.5.11
+* Redux 4.0.1
+* Redux Sagas 0.16.0
 * And more!
 
 
@@ -21,13 +20,7 @@ Currently includes:
 When you've installed the [Ignite CLI](https://github.com/infinitered/ignite), you can get started with this boilerplate like this:
 
 ```
-ignite new MyLatestCreation
-```
-
-You can also change the React Native version, just keep in mind, we may not have tested this just yet.
-
-```sh
-ignite new MyLatestCreation --react-native-version 0.46.0-rc.2
+ignite new MyLatestCreation --boilerplate=ignite-ir-boilerplate-pautena
 ```
 
 By default we'll ask you some questions during install as to which features you'd like.  If you just want them all, you can skip the questions:
@@ -118,7 +111,6 @@ Here again we have generators to help you out. You just have to use one of the f
 * `ignite g redux Amazing` - Will generate and link the redux for `Amazing`.
 * `ignite g saga Amazing` - The same as above, but for the Sagas
 
-_TODO: explain more about Redux & Redux Sagas here_
 
 ### Services
 
@@ -149,16 +141,6 @@ This folder (located as a sibling to `App`) contains sample Jest snapshot and un
 If you would like to have the `ignite generate` command include the generation of tests when available, add 
 `"test": "jest"` or `"test": "ava"` to `./ignite/ignite.json`, depending on the test runner you are using.
 
-**Previous Boilerplates**
-
-* [2016 aka Ignite 1.0](https://github.com/infinitered/ignite-ir-boilerplate-2016)
-
-
-## Premium Support
-
-[Ignite CLI](https://infinite.red/ignite) and [Ignite IR Boilerplate](https://github.com/infinitered/ignite-ir-boilerplate-andross), as open source projects, are free to use and always will be. [Infinite Red](https://infinite.red/) offers premium Ignite CLI support and general mobile app design/development services. Email us at [hello@infinite.red](mailto:hello@infinite.red) to get in touch with us for more details.
-
-
 ## Fixes
 
 ### React Native and Xcode 10 issues
@@ -168,4 +150,4 @@ Run this commands after initialize a project:
 $ cd node_modules/react-native/scripts && ./ios-install-third-party.sh && cd ../../../
 $ cd node_modules/react-native/third-party/glog-0.3.5/ && ../../scripts/ios-configure-glog.sh && cd ../../../..
 
-[Link to solution](https://github.com/facebook/react-native/issues/21168)
+[More info here](https://github.com/facebook/react-native/issues/21168)
