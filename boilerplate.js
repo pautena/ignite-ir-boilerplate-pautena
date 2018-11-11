@@ -102,7 +102,8 @@ async function install (context) {
     reactNativeVersion: rnInstall.version,
     vectorIcons: answers['vector-icons'],
     animatable: answers['animatable'],
-    i18n: answers['i18n']
+    i18n: answers['i18n'],
+    reduxOffline: answers['redux-offline']
   }
   await ignite.copyBatch(context, templates, templateProps, {
     quiet: true,
