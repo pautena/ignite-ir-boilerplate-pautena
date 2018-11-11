@@ -1,9 +1,7 @@
 {
-  "name": "ignite-ir-boilerplate-andross",
+  "name": "ignite-ir-boilerplate-pautena",
   "description": "Infinite Red's hot boilerplate for React Native.",
   "license": "MIT",
-  "repository": "infinitered/ignite-ir-boilerplate-andross",
-  "homepage": "https://github.com/infinitered/ignite-ir-boilerplate-andross",
   "version": "2.3.3",
   "files": [
     "boilerplate",
@@ -18,9 +16,8 @@
     "screenExamples.js"
   ],
   "author": {
-    "name": "Infinite Red",
-    "email": "npm@infinite.red",
-    "url": "https://github.com/infinitered/ignite-ir-boilerplate-andross"
+    "name": "Pau Tena Vidal",
+    "email": "pautenavidal@gmail.com"
   },
   "scripts": {
     "lint": "standard",

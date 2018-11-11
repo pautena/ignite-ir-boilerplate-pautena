@@ -171,22 +171,16 @@ async function install (context) {
   try {
     // boilerplate adds itself to get plugin.js/generators etc
     // Could be directory, npm@version, or just npm name.  Default to passed in values
-    const boilerplate = parameters.options.b || parameters.options.boilerplate || 'ignite-ir-boilerplate-andross'
-
+    const boilerplate = parameters.options.b || parameters.options.boilerplate;
     await system.spawn(`ignite add ${boilerplate} ${debugFlag}`, { stdio: 'inherit' })
 
     // now run install of Ignite Plugins
-    if (answers['dev-screens'] === 'Yes') {
-      await system.spawn(`ignite add dev-screens@"~>2.2.0" ${debugFlag}`, {
-        stdio: 'inherit'
-      })
-    }
-
     if (answers['vector-icons'] === 'react-native-vector-icons') {
       await system.spawn(`ignite add vector-icons@"~>1.0.0" ${debugFlag}`, {
         stdio: 'inherit'
       })
     }
+
 
     if (answers['animatable'] === 'react-native-animatable') {
       await system.spawn(`ignite add animatable@"~>1.0.0" ${debugFlag}`, {
@@ -195,7 +189,7 @@ async function install (context) {
     }
 
     if (answers['redux-persist'] === 'Yes') {
-      await system.spawn(`ignite add redux-persist@"~>1.0.1" ${debugFlag}`, {
+      await system.spawn(`ignite add redux-persist@"~>1.1.0" ${debugFlag}`, {
         stdio: 'inherit'
       })
     }

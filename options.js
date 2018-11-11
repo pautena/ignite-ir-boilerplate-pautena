@@ -3,12 +3,6 @@
  */
 const questions = [
   {
-    name: 'dev-screens',
-    message: 'Would you like Ignite Development Screens?',
-    type: 'list',
-    choices: ['No', 'Yes']
-  },
-  {
     name: 'vector-icons',
     message: 'What vector icon library will you use?',
     type: 'list',
